@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"  
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+                 x:Class="BlackApp.Views.Settings.SetShows" 
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+                 xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"  
+                 BackgroundColor="Transparent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                          PositionIn="Center"  
+                          PositionOut="Center"  
+                          ScaleIn="1.2"  
+                          ScaleOut="0.8"  
+                          DurationIn="400"  
+                          DurationOut="300"  
+                          EasingIn="SinOut"  
+                          EasingOut="SinIn"  
+          HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20, 20, 20, 20">
+        <StackLayout BackgroundColor="White">
+            <Frame OutlineColor="Black">
+                <ListView x:Name="listView" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <input:CheckBox IsChecked="{Binding Selected, Mode=TwoWay}" Text="{Binding Title}" Type="Check"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+        <Button Text="Confirm" Clicked="Exit_Clicked"></Button>
+    </StackLayout>
+</pages:PopupPage>  

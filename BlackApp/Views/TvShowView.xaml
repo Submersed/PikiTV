@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BlackApp.Views.TvShowView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="select shows" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Picker x:Name="ListOfShows" Grid.Row="0" Title="Select a program" ItemDisplayBinding="{Binding Title}" SelectedIndexChanged="ListOfShows_SelectedIndexChanged"/>
+            <ScrollView x:Name="Skrolko" Grid.Row="1" Padding="0" >
+                <!--Scrolled="ScrollView_Scrolled"-->
+                <StackLayout x:Name="test"/>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+        <!--<ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="ListOfShows" Title="Select a Show" ItemDisplayBinding="{Binding Title}" SelectedIndexChanged="ListOfShows_SelectedIndexChanged"/>
+            <ListView x:Name="TvShowViewList" ItemsSource="{Binding}" RowHeight="180" Margin="10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <ListView ItemsSource="{Binding TvEvents}" RowHeight="60">
+                                    <ListView.Header>
+                                        <Label Text="{Binding AirDateTime}" FontSize="30"/>
+                                    </ListView.Header>
+                                    <ListView.Footer>
+                                        <Label Text=""/>
+                                    </ListView.Footer>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackLayout Orientation="Vertical" Grid.Column="0" HorizontalOptions="StartAndExpand">
+                                                            <Label Text = "{Binding Time}" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Vertical" Grid.Column="4" HorizontalOptions="EndAndExpand">
+                                                            <Label Text = "{Binding TvProgram.Title}" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                                                            <Label Text = "{Binding Details}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

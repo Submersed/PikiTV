@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BlackApp.Views.Models.TPView">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Text = "{Binding Time}" HorizontalOptions="StartAndExpand" Grid.Column="0" VerticalOptions="FillAndExpand" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" Padding="10,0,20,0"/>
+        <Label Text = "{Binding TvShow.Title}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand"  VerticalOptions="FillAndExpand" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+        <Label Text = "{Binding Details}" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+    </Grid>
+</ContentView>
